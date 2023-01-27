@@ -10,10 +10,14 @@ export default{
   title:'ATOMS/ButtonComp',
   component:Button,
   argTypes: { 
-    variantColor:{control:'text'},
-    children:{control:'text'},
-    onClick: { action: 'clicked' } ,
-    onMouseOver:{action:'mouseOver'}
+    variant: {
+      options: ['primary', 'secondary'],
+      control: { type: 'radio' },
+    },
+    // variantColor:{control:'text'},
+    // children:{control:'text'},
+    // onClick: { action: 'clicked' } ,
+    // onMouseOver:{action:'mouseOver'}
   },
 
 }as Meta<typeof Button>

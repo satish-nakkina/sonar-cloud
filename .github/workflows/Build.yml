@@ -10,9 +10,6 @@ jobs:
    if: startsWith(github.head_ref, 'FE_') && github.event.pull_request.merged == false
    name: SonarCloud
    runs-on: ubuntu-latest
-   defaults:
-     run:
-       working-directory: ./sonar-cloud
    steps:
      - uses: actions/checkout@v2
        with:
@@ -28,7 +25,7 @@ jobs:
        env:
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-branchAnalysis: # to get the branch analysis on merge
+ branchAnalysis: # to get the branch analysis on merge
    if: github.event.pull_request.merged == true
    name: Branch Analysis on PR merge
    runs-on: ubuntu-latest
@@ -48,7 +45,7 @@ branchAnalysis: # to get the branch analysis on merge
          projectBaseDir: ./sonar-cloud
          args: >
            -Dsonar.branch.name=main
-       uses: SonarSource/sonarcloud-github-action@master
+       uses: SonarSource/sonarcloud-github-action@Dev
        env:
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
