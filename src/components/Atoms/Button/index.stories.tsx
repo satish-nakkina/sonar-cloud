@@ -10,14 +10,14 @@ export default{
   title:'ATOMS/ButtonComp',
   component:Button,
   argTypes: { 
-    variant: {
-      options: ['primary', 'secondary'],
-      control: { type: 'radio' },
+    propertyA: {
+      options: ['Item One', 'Item Two', 'Item Three'],
+      control: { type: 'select' } // Automatically inferred when 'options' is defined
     },
-    // variantColor:{control:'text'},
-    // children:{control:'text'},
-    // onClick: { action: 'clicked' } ,
-    // onMouseOver:{action:'mouseOver'}
+    variantColor:{control:'text'},
+    children:{control:'text'},
+    onClick: { action: 'clicked' } ,
+    onMouseOver:{action:'mouseOver'}
   },
 
 }as Meta<typeof Button>
@@ -32,6 +32,7 @@ const contained=ButtonTemplate.bind({});
 contained.args={
   variant:'contained',
   label:'contained',
+  propertyA:'Item One',
 }
 export {contained}; 
 

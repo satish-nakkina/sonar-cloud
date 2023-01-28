@@ -5,6 +5,7 @@ import { Button as MuiButton, ButtonProps } from "@mui/material";
   onClick?:()=>void
   startIcon?:JSX.Element
   variant?:'text'|'contained'|'outlined';
+  propertyA?:string;
 
   buttonStyles?:React.CSSProperties;
   
