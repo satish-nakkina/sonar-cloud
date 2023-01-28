@@ -1,12 +1,13 @@
 {
     "name": "my-app",
-    "version": "0.1.0",
     "jest": {
         "collectCoverageFrom": [
-            "src/components/**/*.{ts,tsx}",
-            "!src/components/**/*.stories.tsx"
+            "src/components/Atoms/**/*.{ts,tsx}",
+            "!src/components/Atoms/**/*.stories.tsx",
+            "!src/components/Atoms/Icons/*"
         ]
     },
+    "version": "0.1.0",
     "private": true,
     "dependencies": {
         "@emotion/react": "^11.10.5",
